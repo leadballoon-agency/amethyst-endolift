@@ -31,20 +31,11 @@ export const metadata: Metadata = {
     siteName: 'Amethyst Aesthetics Beauty - Endolift Somerset',
     type: 'website',
     locale: 'en_GB',
-    images: [
-      {
-        url: '/images/endolift-og.jpg',
-        width: 1200,
-        height: 675,
-        alt: 'Endolift Non-Surgical Laser Lift - Jawline & Neck Tightening - Amethyst Aesthetics Beauty Somerset',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Endolift Somerset £1,200 - Non-Surgical Laser Lift | Amethyst Aesthetics Beauty',
     description: 'Tighter jawline without surgery. Endolift laser tightening for jawline, jowls & neck. £1,200. 1-2 days downtime. Results last 1-5 years.',
-    images: ['/images/endolift-og.jpg'],
   },
   robots: {
     index: true,
