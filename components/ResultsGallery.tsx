@@ -88,28 +88,10 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       isBeforeAfter: true
     },
     {
-      beforeImage: '/images/client-journey/rhs-before.jpg',
-      afterImage: '/images/client-journey/rhs-after.jpg',
-      title: 'Right Side Profile',
-      description: 'Improved jawline definition and reduced skin laxity',
-      time: 'Results Vary',
-      isAvailable: true,
-      featured: false,
-      isBeforeAfter: true
-    },
-    {
       image: '/images/endolift-before-after.png',
       title: 'Endolift Results',
       description: 'Visible skin tightening and facial contouring',
       time: 'Before & After',
-      isAvailable: true,
-      featured: false
-    },
-    {
-      image: '/images/client-journey/lhs-before.jpg',
-      title: 'Left Side - Before',
-      description: 'Starting point showing skin laxity in the lower face',
-      time: 'Pre-Treatment',
       isAvailable: true,
       featured: false
     },
