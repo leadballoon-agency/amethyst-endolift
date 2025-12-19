@@ -74,7 +74,7 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Watch Video
+                Meet Marianne
               </button>
             </div>
 
@@ -112,9 +112,9 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
                 >
                   <source src="https://storage.googleapis.com/msgsndr/yE0ZTtTwqOwpiUubrP0k/media/694522e00190af25cde42b4d.mp4" type="video/mp4" />
                 </video>
-                {/* Play full video overlay */}
-                <button
-                  onClick={onVideoClick}
+                {/* Link to full treatment video */}
+                <a
+                  href="#treatment-video"
                   className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 hover:opacity-100 transition-opacity"
                 >
                   <div className="bg-white/90 backdrop-blur rounded-full p-3">
@@ -123,12 +123,12 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                </button>
+                </a>
               </div>
               {/* Overlay Card */}
               <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg">
                 <p className="text-xs text-neutral-600 text-center">
-                  Real Endolift treatment in progress
+                  Tap to watch full treatment
                 </p>
               </div>
             </div>
@@ -152,9 +152,9 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
                     >
                       <source src="https://storage.googleapis.com/msgsndr/yE0ZTtTwqOwpiUubrP0k/media/694522e00190af25cde42b4d.mp4" type="video/mp4" />
                     </video>
-                    {/* Play full video overlay */}
-                    <button
-                      onClick={onVideoClick}
+                    {/* Link to full treatment video */}
+                    <a
+                      href="#treatment-video"
                       className="absolute inset-0 flex items-center justify-center bg-black/10 hover:bg-black/30 transition-colors group cursor-pointer"
                     >
                       <div className="bg-white/90 backdrop-blur rounded-full p-4 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
@@ -163,11 +163,11 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                    </button>
-                    {/* Live treatment badge */}
+                    </a>
+                    {/* Treatment preview badge */}
                     <div className="absolute top-4 left-4 bg-primary-500/90 backdrop-blur text-white px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5">
                       <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                      Live Treatment
+                      Treatment Preview
                     </div>
                   </div>
                 </div>

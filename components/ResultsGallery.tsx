@@ -1,15 +1,68 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import ModelDayModal from './ModelDayModal'
 
 interface ResultsGalleryProps {
   onBookingClick?: () => void
 }
 
+// Treatment video URL
+const TREATMENT_VIDEO_URL = 'https://storage.googleapis.com/msgsndr/yE0ZTtTwqOwpiUubrP0k/media/694522e00190af25cde42b4d.mp4'
+
 export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const [showModelDayModal, setShowModelDayModal] = useState(false)
+  const [showTreatmentVideo, setShowTreatmentVideo] = useState(false)
+  const [isPiPActive, setIsPiPActive] = useState(false)
+  const treatmentVideoRef = useRef<HTMLVideoElement>(null)
+
+  // Handle PiP mode
+  const togglePiP = async () => {
+    if (!treatmentVideoRef.current) return
+
+    try {
+      if (document.pictureInPictureElement) {
+        await document.exitPictureInPicture()
+        setIsPiPActive(false)
+      } else if (document.pictureInPictureEnabled) {
+        await treatmentVideoRef.current.requestPictureInPicture()
+        setIsPiPActive(true)
+        setShowTreatmentVideo(false) // Close modal when PiP activates
+      }
+    } catch (error) {
+      console.error('PiP error:', error)
+    }
+  }
+
+  // Listen for PiP exit
+  useEffect(() => {
+    const handlePiPChange = () => {
+      if (!document.pictureInPictureElement) {
+        setIsPiPActive(false)
+      }
+    }
+
+    document.addEventListener('leavepictureinpicture', handlePiPChange)
+    return () => document.removeEventListener('leavepictureinpicture', handlePiPChange)
+  }, [])
+
+  // Handle ESC key and body scroll for treatment video modal
+  useEffect(() => {
+    if (showTreatmentVideo) {
+      document.body.style.overflow = 'hidden'
+
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') setShowTreatmentVideo(false)
+      }
+      window.addEventListener('keydown', handleEscape)
+
+      return () => {
+        document.body.style.overflow = 'unset'
+        window.removeEventListener('keydown', handleEscape)
+      }
+    }
+  }, [showTreatmentVideo])
 
   const results: Array<{
     beforeImage?: string
@@ -43,6 +96,14 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       isAvailable: true,
       featured: false,
       isBeforeAfter: true
+    },
+    {
+      image: '/images/endolift-before-after.png',
+      title: 'Endolift Results',
+      description: 'Visible skin tightening and facial contouring',
+      time: 'Before & After',
+      isAvailable: true,
+      featured: false
     },
     {
       image: '/images/client-journey/lhs-before.jpg',
@@ -206,36 +267,61 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
           ))}
         </div>
 
-        {/* Treatment Video Section - Portrait Video */}
-        <div className="mt-8 sm:mt-12">
+        {/* Treatment Video Section - With Modal Player */}
+        <div id="treatment-video" className="mt-8 sm:mt-12 scroll-mt-20">
           <div className="bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-premium">
             <div className="flex flex-col lg:flex-row">
-              {/* Video - Portrait aspect ratio */}
-              <div className="relative bg-black flex items-center justify-center lg:w-1/3">
-                <div className="relative w-full max-w-[280px] mx-auto lg:max-w-none aspect-[9/16]">
-                  <video
-                    className="w-full h-full object-contain"
-                    controls
-                    playsInline
-                    preload="metadata"
-                    poster="/images/client-journey/before.jpg"
-                  >
-                    <source src="https://storage.googleapis.com/msgsndr/yE0ZTtTwqOwpiUubrP0k/media/694522e00190af25cde42b4d.mp4" type="video/mp4" />
-                  </video>
-                  <div className="absolute top-3 left-3 bg-primary-500/90 backdrop-blur text-white px-3 py-1 rounded-full text-xs font-medium">
-                    16 mins
-                  </div>
+              {/* Video Thumbnail - Click to open modal */}
+              <button
+                onClick={() => setShowTreatmentVideo(true)}
+                className="relative bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center lg:w-2/5 group cursor-pointer min-h-[300px] lg:min-h-[400px]"
+              >
+                {/* Thumbnail image */}
+                <div className="absolute inset-0">
+                  <img
+                    src="/images/client-journey/before.jpg"
+                    alt="Endolift treatment preview"
+                    className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 </div>
-              </div>
+
+                {/* Play button */}
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white/90 backdrop-blur rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-white transition-all duration-300 shadow-2xl">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 text-primary-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <p className="mt-4 text-white font-semibold text-sm sm:text-base">Watch Full Treatment</p>
+                  <p className="text-white/70 text-xs sm:text-sm mt-1">18 minute procedure video</p>
+                </div>
+
+                {/* Duration badge */}
+                <div className="absolute top-4 left-4 bg-primary-500/90 backdrop-blur text-white px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  18 mins
+                </div>
+
+                {/* PiP indicator if active */}
+                {isPiPActive && (
+                  <div className="absolute top-4 right-4 bg-green-500/90 backdrop-blur text-white px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5">
+                    <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    Playing in PiP
+                  </div>
+                )}
+              </button>
 
               {/* Content */}
-              <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center lg:w-2/3">
+              <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center lg:w-3/5">
                 <span className="text-primary-600 font-medium text-xs sm:text-sm uppercase tracking-wider mb-2">Watch the Procedure</span>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-800 mb-3 sm:mb-4">
                   See a Real Endolift Treatment
                 </h3>
                 <p className="text-neutral-600 text-sm sm:text-base mb-4 sm:mb-6">
-                  Watch the complete 16-minute Endolift procedure performed by Marianne. See exactly what happens during treatment — from the initial preparation to the final results.
+                  Watch the complete 18-minute Endolift procedure performed by Marianne. See exactly what happens during treatment — from the initial preparation to the final results.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center text-sm text-neutral-600">
@@ -257,15 +343,23 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
                     Real patient, real results
                   </li>
                 </ul>
-                <a
-                  href="#assessment"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base hover:shadow-lg transition-all duration-300 w-full sm:w-auto"
-                >
-                  Check Your Suitability
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => setShowTreatmentVideo(true)}
+                    className="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base hover:shadow-lg transition-all duration-300"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                    Watch Video
+                  </button>
+                  <a
+                    href="#assessment"
+                    className="inline-flex items-center justify-center border-2 border-primary-500 text-primary-600 px-6 py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-primary-50 transition-all duration-300"
+                  >
+                    Check Suitability
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -353,6 +447,90 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+            </div>
+          </div>
+        )}
+
+        {/* Treatment Video Modal */}
+        {showTreatmentVideo && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+              onClick={() => setShowTreatmentVideo(false)}
+            />
+
+            {/* Modal Container - Portrait Video Optimized */}
+            <div className="relative w-full max-w-md sm:max-w-lg bg-black rounded-2xl shadow-2xl overflow-hidden animate-modal-slide-up max-h-[90vh] flex flex-col">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-3 flex items-center justify-between flex-shrink-0">
+                <div>
+                  <h3 className="text-white font-semibold text-sm sm:text-base">Full Endolift Treatment</h3>
+                  <p className="text-white/80 text-xs">18 minute procedure with Marianne</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  {/* PiP Button */}
+                  <button
+                    onClick={togglePiP}
+                    className="flex items-center gap-1.5 bg-white/20 hover:bg-white/30 text-white px-2.5 py-1.5 rounded-full text-xs font-medium transition-colors"
+                    title="Picture-in-Picture: Watch while browsing"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2h-4m-6-6h6a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4a2 2 0 012-2z" />
+                    </svg>
+                    <span className="hidden sm:inline">Pop Out</span>
+                  </button>
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setShowTreatmentVideo(false)}
+                    className="w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+                    aria-label="Close video"
+                  >
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* Video Player - Portrait aspect ratio (9:16) */}
+              <div className="relative w-full flex-1 min-h-0 bg-black flex items-center justify-center">
+                <video
+                  ref={treatmentVideoRef}
+                  className="w-full h-full object-contain max-h-[65vh]"
+                  controls
+                  autoPlay
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={TREATMENT_VIDEO_URL} type="video/mp4" />
+                  <p className="text-white text-center p-4">
+                    Your browser doesn&apos;t support video playback.
+                  </p>
+                </video>
+              </div>
+
+              {/* Footer */}
+              <div className="bg-neutral-900 px-4 py-3 flex-shrink-0">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5 text-neutral-400 text-xs">
+                    <svg className="w-3.5 h-3.5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Click &quot;Pop Out&quot; to browse while watching</span>
+                  </div>
+                  <a
+                    href="#assessment"
+                    onClick={() => setShowTreatmentVideo(false)}
+                    className="inline-flex items-center bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors"
+                  >
+                    Check Suitability
+                    <svg className="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         )}

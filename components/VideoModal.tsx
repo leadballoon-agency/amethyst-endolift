@@ -7,8 +7,8 @@ interface VideoModalProps {
   onClose: () => void
 }
 
-// Full Endolift treatment video (16 minutes, portrait orientation)
-const VIDEO_URL = 'https://storage.googleapis.com/msgsndr/yE0ZTtTwqOwpiUubrP0k/media/694522e00190af25cde42b4d.mp4'
+// Endolift treatment video (square format 1080x1080)
+const VIDEO_URL = 'https://storage.googleapis.com/msgsndr/yE0ZTtTwqOwpiUubrP0k/media/6945a8d166d578422212bd86.mp4'
 
 export default function VideoModal({ isOpen, onClose }: VideoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -53,8 +53,8 @@ export default function VideoModal({ isOpen, onClose }: VideoModalProps) {
         onClick={onClose}
       />
 
-      {/* Video Container - Portrait optimized */}
-      <div className="relative w-full max-w-sm sm:max-w-md bg-black rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden animate-modal-slide-up max-h-[90vh] flex flex-col">
+      {/* Video Container - Square format optimized */}
+      <div className="relative w-full max-w-[90vw] sm:max-w-lg bg-black rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden animate-modal-slide-up max-h-[90vh] flex flex-col">
 
         {/* Close Button */}
         <button
@@ -71,20 +71,17 @@ export default function VideoModal({ isOpen, onClose }: VideoModalProps) {
         <div className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-3 flex-shrink-0">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-white font-semibold text-sm sm:text-base">Full Endolift Treatment</h3>
-              <p className="text-white/80 text-xs sm:text-sm">Watch the complete procedure</p>
-            </div>
-            <div className="bg-white/20 rounded-full px-3 py-1">
-              <span className="text-white text-xs font-medium">16 mins</span>
+              <h3 className="text-white font-semibold text-sm sm:text-base">Meet Marianne</h3>
+              <p className="text-white/80 text-xs sm:text-sm">Learn about Endolift treatment</p>
             </div>
           </div>
         </div>
 
-        {/* Video Player - Portrait aspect ratio */}
+        {/* Video Player - Square aspect ratio (1:1) */}
         <div className="relative w-full flex-1 min-h-0 bg-black flex items-center justify-center">
           <video
             ref={videoRef}
-            className="w-full h-full object-contain max-h-[60vh]"
+            className="w-full h-full object-contain max-h-[70vh]"
             controls
             playsInline
             preload="metadata"
