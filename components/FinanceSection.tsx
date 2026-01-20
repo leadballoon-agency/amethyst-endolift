@@ -21,11 +21,13 @@ export default function FinanceSection({ onBookingClick }: FinanceSectionProps) 
         {/* Main Content */}
         <div className="max-w-4xl mx-auto">
           {/* Klarna Banner */}
-          <div className="bg-gradient-to-br from-[#FFB3C7] to-[#FF85A3] rounded-3xl p-8 sm:p-12 shadow-premium mb-8 text-center">
-            <div className="text-white">
-              <h3 className="text-4xl font-bold mb-2">Pay in 3</h3>
-              <p className="text-xl">Interest-free with Klarna</p>
-            </div>
+          <div className="bg-[#FFB3C7] rounded-3xl p-8 sm:p-12 shadow-premium mb-8 text-center flex flex-col items-center justify-center">
+            <p className="text-2xl sm:text-3xl font-medium text-black mb-2">Pay later with</p>
+            <img
+              src="https://x.klarnacdn.net/payment-method/assets/badges/generic/klarna.svg"
+              alt="Klarna"
+              className="h-10 sm:h-14"
+            />
           </div>
 
           {/* Benefits Grid */}
