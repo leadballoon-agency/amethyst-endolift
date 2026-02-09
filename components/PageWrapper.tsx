@@ -15,6 +15,7 @@ import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 import BookingModal from '@/components/BookingModal'
 import VideoModal from '@/components/VideoModal'
+import ExitIntentPopup from '@/components/ExitIntentPopup'
 
 export default function PageWrapper() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
@@ -83,6 +84,9 @@ export default function PageWrapper() {
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
       />
+
+      {/* Exit Intent Popup - Model Day Offer */}
+      <ExitIntentPopup />
 
       {/* Floating Book Now Button */}
       <button
