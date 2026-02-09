@@ -70,48 +70,79 @@ export default function ModelDayModal({ isOpen, onClose }: ModelDayModalProps) {
         {/* Content */}
         <div className="p-6 sm:p-8">
           <p className="text-neutral-600 text-sm sm:text-base mb-6">
-            We're always looking for new models to showcase the incredible results of Endolift treatment. Send us your photos via WhatsApp and we'll assess if you'd be a good fit.
+            We're looking for models to showcase the incredible results of Endolift treatment. Enjoy exclusive model pricing in exchange for before & after photos and video content for our social media.
           </p>
 
-          <div className="space-y-4 mb-6">
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-primary-600 font-bold text-sm">1</span>
+          {/* Model Pricing */}
+          <div className="mb-6">
+            <h3 className="font-semibold text-neutral-800 mb-3 text-sm uppercase tracking-wider">Model Pricing</h3>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between bg-neutral-50 rounded-xl px-4 py-3">
+                <span className="text-neutral-700 font-medium">Full Face & Neck</span>
+                <span className="text-primary-600 font-bold text-lg">£550</span>
               </div>
-              <div>
-                <h4 className="font-semibold text-neutral-800 mb-1">Send Your Photos</h4>
-                <p className="text-sm text-neutral-600">Message us on WhatsApp with clear photos of the areas you'd like to treat (jawline, neck, jowls).</p>
+              <div className="flex items-center justify-between bg-neutral-50 rounded-xl px-4 py-3">
+                <span className="text-neutral-700 font-medium">Lower Face</span>
+                <span className="text-primary-600 font-bold text-lg">£450</span>
               </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-primary-600 font-bold text-sm">2</span>
-              </div>
-              <div>
-                <h4 className="font-semibold text-neutral-800 mb-1">We'll Assess Suitability</h4>
-                <p className="text-sm text-neutral-600">Our practitioner will review your photos and let you know if you'd be a suitable candidate for our model programme.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-primary-600 font-bold text-sm">3</span>
-              </div>
-              <div>
-                <h4 className="font-semibold text-neutral-800 mb-1">Preferential Rates</h4>
-                <p className="text-sm text-neutral-600">If selected, you'll receive preferential rates in exchange for allowing us to use your before & after photos.</p>
+              <div className="flex items-center justify-between bg-neutral-50 rounded-xl px-4 py-3">
+                <div>
+                  <span className="text-neutral-700 font-medium">Body Areas</span>
+                  <p className="text-xs text-neutral-500 mt-0.5">Arms, Knees, Tummy & Bums</p>
+                </div>
+                <span className="text-primary-600 font-bold text-lg">£300</span>
               </div>
             </div>
           </div>
 
-          {/* Info note */}
+          {/* What's Required */}
+          <div className="space-y-4 mb-6">
+            <h3 className="font-semibold text-neutral-800 text-sm uppercase tracking-wider">What&apos;s Required</h3>
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-neutral-800 mb-1">Before & After Photos</h4>
+                <p className="text-sm text-neutral-600">Professional before and after photographs will be taken to document your results.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-neutral-800 mb-1">Video & Social Media</h4>
+                <p className="text-sm text-neutral-600">You must be prepared to be filmed and have pictures taken for use on our social media channels.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-neutral-800 mb-1">6-Month Follow-Up</h4>
+                <p className="text-sm text-neutral-600">You&apos;ll need to return after 6 months for follow-up photos to showcase the full results.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* How to Apply */}
           <div className="bg-primary-50 border border-primary-100 rounded-xl p-4 mb-6">
             <div className="flex items-start gap-3">
               <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <p className="text-sm text-primary-700">Your privacy is respected - we only photograph the treatment area and your face won't be shown unless you specifically consent.</p>
+              <p className="text-sm text-primary-700">Send us your photos via WhatsApp and we&apos;ll assess if you&apos;d be a suitable candidate for our model programme. Limited places available.</p>
             </div>
           </div>
 

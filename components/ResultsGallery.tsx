@@ -107,7 +107,7 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
     {
       image: '/images/model-day-tile.svg',
       title: 'Become a Model',
-      description: 'Send your photos via WhatsApp to see if you qualify for preferential rates',
+      description: 'Model pricing from £300 — be filmed & photographed for social media',
       time: 'Apply Now',
       isAvailable: true,
       featured: false,
