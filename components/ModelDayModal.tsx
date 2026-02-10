@@ -8,7 +8,7 @@ interface ModelDayModalProps {
 }
 
 export default function ModelDayModal({ isOpen, onClose }: ModelDayModalProps) {
-  const whatsappNumber = '447309137314'
+  const whatsappNumber = '447366904007'
   const whatsappMessage = encodeURIComponent('Hi! I\'d like to send my photos to see if I could be a suitable model for Endolift treatment.')
 
   useEffect(() => {

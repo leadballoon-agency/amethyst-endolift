@@ -6,7 +6,7 @@ export default function ExitIntentPopup() {
   const [isOpen, setIsOpen] = useState(false)
   const [hasTriggered, setHasTriggered] = useState(false)
 
-  const whatsappNumber = '447309137314'
+  const whatsappNumber = '447366904007'
   const whatsappMessage = encodeURIComponent('Hi! I\'d like to find out more about becoming a model for Endolift treatment.')
 
   const handleMouseLeave = useCallback((e: MouseEvent) => {
