@@ -96,6 +96,14 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       featured: false
     },
     {
+      image: '/images/new-before-and-after.jpeg',
+      title: 'Jawline & Neck Contouring',
+      description: 'Immediate results — tighter jawline and neck definition from a single session',
+      time: 'Immediate Result',
+      isAvailable: true,
+      featured: false
+    },
+    {
       image: '/images/award-finalist-2025.avif',
       title: 'Award-Winning Excellence',
       description: 'Marianne - Professional Beauty Awards Finalist 2025',
