@@ -78,31 +78,24 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
     isBeforeAfter?: boolean
   }> = [
     {
+      image: '/images/new-before-and-after.jpeg',
+      title: 'Jawline & Neck Contouring',
+      description: 'Immediate results — tighter jawline and neck definition from a single session',
+      time: 'Immediate Result',
+      isAvailable: true,
+      featured: true
+    },
+    {
       beforeImage: '/images/client-journey/before.jpg',
       afterImage: '/images/client-journey/after.jpg',
       title: 'Jawline & Jowl Tightening',
       description: 'Visible lift and contouring from a single Endolift session',
       time: 'Single Session',
       isAvailable: true,
-      featured: true,
+      featured: false,
       isBeforeAfter: true
     },
-    {
-      image: '/images/endolift-before-after.png',
-      title: 'Endolift Results',
-      description: 'Visible skin tightening and facial contouring',
-      time: 'Before & After',
-      isAvailable: true,
-      featured: false
-    },
-    {
-      image: '/images/new-before-and-after.jpeg',
-      title: 'Jawline & Neck Contouring',
-      description: 'Immediate results — tighter jawline and neck definition from a single session',
-      time: 'Immediate Result',
-      isAvailable: true,
-      featured: false
-    },
+    // Removed — duplicate of client-journey before/after
     {
       image: '/images/award-finalist-2025.avif',
       title: 'Award-Winning Excellence',
@@ -229,11 +222,11 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
                   </div>
                 </div>
               ) : (
-                <div className={`relative overflow-hidden ${result.featured ? 'aspect-video' : 'aspect-square'} ${result.isAward ? 'bg-gradient-to-br from-amber-50 to-white flex items-center justify-center' : ''}`}>
+                <div className={`relative overflow-hidden ${result.featured ? '' : 'aspect-square'} ${result.isAward ? 'bg-gradient-to-br from-amber-50 to-white flex items-center justify-center' : ''}`}>
                   <img
                     src={result.image}
                     alt={result.title}
-                    className={`${result.isAward ? 'w-1/2 h-auto object-contain' : 'w-full h-full object-cover'} sm:group-hover:scale-105 transition-transform duration-500`}
+                    className={`${result.isAward ? 'w-1/2 h-auto object-contain' : result.featured ? 'w-full h-auto' : 'w-full h-full object-cover'} sm:group-hover:scale-105 transition-transform duration-500`}
                   />
 
                   {/* Gradient Overlay */}
