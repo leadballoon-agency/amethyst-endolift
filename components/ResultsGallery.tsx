@@ -97,6 +97,22 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
     },
     // Removed — duplicate of client-journey before/after
     {
+      image: '/images/amethyst-endo-ba-1.jpg',
+      title: 'Full Face Transformation',
+      description: 'Remarkable lifting and tightening — front view before and after Endolift',
+      time: 'Single Session',
+      isAvailable: true,
+      featured: false
+    },
+    {
+      image: '/images/amethyst-endo-ba-2.jpg',
+      title: 'Profile View Results',
+      description: 'Visible jawline definition and neck contouring — side profile comparison',
+      time: 'Single Session',
+      isAvailable: true,
+      featured: false
+    },
+    {
       image: '/images/award-finalist-2025.avif',
       title: 'Award-Winning Excellence',
       description: 'Marianne - Professional Beauty Awards Finalist 2025',
