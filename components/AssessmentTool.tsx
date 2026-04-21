@@ -126,21 +126,6 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
       }
     }
 
-    // CO2 LASER - For texture, scars, pigmentation, surface concerns
-    if (concern === 'texture' || concern === 'pigment' ||
-        (concern === 'lines' && (area === 'eyes' || area === 'fullface'))) {
-      return {
-        treatment: 'CO2 Laser Resurfacing',
-        price: 'From £395',
-        description: 'The gold standard for skin texture, scars, and pigmentation. Removes damaged surface skin and stimulates fresh collagen.',
-        whyThisWorks: 'Ablative laser precisely removes damaged skin layers while triggering deep collagen remodelling.',
-        downtime: '5-7 days healing',
-        results: '70-80% improvement in scars and texture',
-        link: 'https://co2lasersomerset.co.uk',
-        isIdeal: false
-      }
-    }
-
     // DERMAL FILLERS - For volume loss
     if (concern === 'volume') {
       return {

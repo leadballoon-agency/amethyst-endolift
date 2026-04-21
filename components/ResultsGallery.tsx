@@ -191,14 +191,16 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
                 </div>
               )}
 
-              {/* Time Badge */}
-              <div className={`absolute top-2 sm:top-4 right-2 sm:right-4 z-10 backdrop-blur rounded-full px-2 sm:px-3 py-0.5 sm:py-1 ${
-                result.isAvailable ? 'bg-white/90' : 'bg-red-500/90'
-              }`}>
-                <span className={`text-[10px] sm:text-xs font-medium ${
-                  result.isAvailable ? 'text-neutral-700' : 'text-white'
-                }`}>{result.time}</span>
-              </div>
+              {/* Time Badge — only on special cards */}
+              {(result.isAward || result.isModelDay) && (
+                <div className={`absolute top-2 sm:top-4 right-2 sm:right-4 z-10 backdrop-blur rounded-full px-2 sm:px-3 py-0.5 sm:py-1 ${
+                  result.isAvailable ? 'bg-white/90' : 'bg-red-500/90'
+                }`}>
+                  <span className={`text-[10px] sm:text-xs font-medium ${
+                    result.isAvailable ? 'text-neutral-700' : 'text-white'
+                  }`}>{result.time}</span>
+                </div>
+              )}
 
               {/* Image Container - Before/After Side by Side */}
               {result.isBeforeAfter ? (

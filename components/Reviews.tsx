@@ -60,6 +60,46 @@ export default function Reviews() {
       treatment: "Aesthetic Treatment",
       text: "Marianne is superb. She provides extensive knowledge of the treatment you are having, explaining everything including aftercare which in turn puts you at ease. She goes above and beyond to ensure your treatment is provided under the highest standard.",
       verified: true
+    },
+    {
+      name: "Megan Boughtwood",
+      rating: 5,
+      date: "2026-04-07",
+      treatment: "Endolift",
+      text: "I had Endolift at Amethyst Beauty with Marianne and just wanted to share how good it was! I was nervous beforehand, but Marianne kept me completely at ease, talking me through everything.",
+      verified: true
+    },
+    {
+      name: "Trase-Shayne Holmes",
+      rating: 5,
+      date: "2026-04-14",
+      treatment: "Aesthetics",
+      text: "Marianne was very professional & put me at ease straight away, as I have not had aesthetics before, so this was a big step for me. She talked me through during the procedure, explaining to me clearly what to expect.",
+      verified: true
+    },
+    {
+      name: "Juanita Curtis",
+      rating: 5,
+      date: "2026-04-14",
+      treatment: "Multiple Treatments",
+      text: "Marianne makes you feel very welcome and at ease. I have had a couple of treatments now and have a few more booked in. She is professional, kind, very honest and it's a 5 star from me. I am looking forward to continuing my transformation journey with confidence.",
+      verified: true
+    },
+    {
+      name: "Marie King",
+      rating: 5,
+      date: "2026-02-21",
+      treatment: "Endolift & CO2",
+      text: "Marianne is so professional and good at her job. Endo lift and co2 facial. This is the lady to go to.",
+      verified: true
+    },
+    {
+      name: "Marc Lyles",
+      rating: 5,
+      date: "2026-02-21",
+      treatment: "Aesthetic Treatment",
+      text: "Marianne is a lovely and friendly, professional lady. She went above and beyond to make sure I was comfortable throughout the treatment. I will definitely be back.",
+      verified: true
     }
   ]
 
@@ -83,7 +123,7 @@ export default function Reviews() {
               ))}
             </div>
             <p className="text-2xl sm:text-3xl font-bold text-neutral-900">4.9</p>
-            <p className="text-sm sm:text-base text-neutral-600 mt-1">Based on 25+ verified reviews</p>
+            <p className="text-sm sm:text-base text-neutral-600 mt-1">Based on 43 Google reviews</p>
           </div>
         </div>
 
