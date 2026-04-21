@@ -78,25 +78,6 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
     isBeforeAfter?: boolean
   }> = [
     {
-      image: '/images/new-before-and-after.jpeg',
-      title: 'Jawline & Neck Contouring',
-      description: 'Immediate results — tighter jawline and neck definition from a single session',
-      time: 'Immediate Result',
-      isAvailable: true,
-      featured: true
-    },
-    {
-      beforeImage: '/images/client-journey/before.jpg',
-      afterImage: '/images/client-journey/after.jpg',
-      title: 'Jawline & Jowl Tightening',
-      description: 'Visible lift and contouring from a single Endolift session',
-      time: 'Single Session',
-      isAvailable: true,
-      featured: false,
-      isBeforeAfter: true
-    },
-    // Removed — duplicate of client-journey before/after
-    {
       image: '/images/amethyst-endo-ba-1.jpg',
       title: 'Full Face Transformation',
       description: 'Remarkable lifting and tightening — front view before and after Endolift',
@@ -111,6 +92,16 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
       time: 'Single Session',
       isAvailable: true,
       featured: false
+    },
+    {
+      beforeImage: '/images/client-journey/before.jpg',
+      afterImage: '/images/client-journey/after.jpg',
+      title: 'Jawline & Jowl Tightening',
+      description: 'Visible lift and contouring from a single Endolift session',
+      time: 'Single Session',
+      isAvailable: true,
+      featured: false,
+      isBeforeAfter: true
     },
     {
       image: '/images/award-finalist-2025.avif',
