@@ -41,11 +41,11 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
             <div className="bg-gradient-to-r from-primary-50 to-primary-100 border-2 border-primary-200 rounded-2xl p-5 sm:p-6 mx-auto lg:mx-0 max-w-xl">
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div className="text-center bg-white rounded-xl p-3 sm:p-4 shadow-sm">
-                  <p className="text-lg sm:text-2xl font-bold text-primary-600 mb-1">1-2 Days</p>
+                  <p className="text-lg sm:text-2xl font-bold text-primary-600 mb-1">Minimal</p>
                   <p className="text-xs sm:text-sm text-neutral-600 font-medium">Downtime</p>
                 </div>
                 <div className="text-center bg-white rounded-xl p-3 sm:p-4 shadow-sm">
-                  <p className="text-lg sm:text-2xl font-bold text-primary-600 mb-1">1-5 Years</p>
+                  <p className="text-lg sm:text-2xl font-bold text-primary-600 mb-1">Up to 5 Years</p>
                   <p className="text-xs sm:text-sm text-neutral-600 font-medium">Results Last</p>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
                   playsInline
                   className="w-full h-full object-cover"
                 >
-                  <source src="https://storage.googleapis.com/msgsndr/yE0ZTtTwqOwpiUubrP0k/media/694522e00190af25cde42b4d.mp4" type="video/mp4" />
+                  <source src="https://assets.cdn.filesafe.space/yE0ZTtTwqOwpiUubrP0k/media/69a8663d6fa65846eab90a9b.mp4" type="video/mp4" />
                 </video>
                 {/* Link to full treatment video */}
                 <a
@@ -157,7 +157,7 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
                       playsInline
                       className="w-full h-full object-cover"
                     >
-                      <source src="https://storage.googleapis.com/msgsndr/yE0ZTtTwqOwpiUubrP0k/media/694522e00190af25cde42b4d.mp4" type="video/mp4" />
+                      <source src="https://assets.cdn.filesafe.space/yE0ZTtTwqOwpiUubrP0k/media/69a8663d6fa65846eab90a9b.mp4" type="video/mp4" />
                     </video>
                     {/* Link to full treatment video */}
                     <a

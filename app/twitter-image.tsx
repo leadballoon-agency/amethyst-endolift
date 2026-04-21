@@ -119,7 +119,7 @@ export default async function Image() {
               padding: '12px 24px',
             }}
           >
-            <span style={{ color: 'white', fontSize: 40, fontWeight: 800 }}>1-2 Days</span>
+            <span style={{ color: 'white', fontSize: 40, fontWeight: 800 }}>Minimal</span>
             <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: 16 }}>Downtime</span>
           </div>
 
@@ -133,7 +133,7 @@ export default async function Image() {
               padding: '12px 24px',
             }}
           >
-            <span style={{ color: 'white', fontSize: 40, fontWeight: 800 }}>1-5 Yrs</span>
+            <span style={{ color: 'white', fontSize: 40, fontWeight: 800 }}>Up to 5 Yrs</span>
             <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: 16 }}>Results Last</span>
           </div>
         </div>

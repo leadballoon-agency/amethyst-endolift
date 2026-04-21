@@ -6,6 +6,7 @@ import PremiumHero from '@/components/PremiumHero'
 import AssessmentTool from '@/components/AssessmentTool'
 import AboutSection from '@/components/AboutSection'
 import PremiumTreatments from '@/components/PremiumTreatments'
+import BodySection from '@/components/BodySection'
 import ResultsGallery from '@/components/ResultsGallery'
 import Reviews from '@/components/Reviews'
 import ProcessSection from '@/components/ProcessSection'
@@ -45,6 +46,10 @@ export default function PageWrapper() {
           setIsBookingModalOpen(true)
         }} />
         <PremiumTreatments onBookingClick={() => {
+          setAssessmentData({ skipToCalendar: true })
+          setIsBookingModalOpen(true)
+        }} />
+        <BodySection onBookingClick={() => {
           setAssessmentData({ skipToCalendar: true })
           setIsBookingModalOpen(true)
         }} />

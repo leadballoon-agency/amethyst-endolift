@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Endolift Somerset From £450 - Non-Surgical Laser Lift | Amethyst Aesthetics Beauty',
-  description: 'Endolift treatment at Amethyst Aesthetics Beauty, South Petherton. From £450 for eyes, £550 neck & jawline, £650 full face, £850 full face, jowls & neck. Minimally invasive laser lift with 1-2 days downtime. FDA approved, results last 1-5 years. Award-finalist clinic with 800+ treatments.',
+  description: 'Endolift treatment at Amethyst Aesthetics Beauty, South Petherton. From £450 for eyes, £550 neck & jawline, £650 full face, £850 full face, jowls & neck. Minimally invasive laser lift with minimal downtime. FDA approved, results last up to 5 years. Award-finalist clinic with 800+ treatments.',
   keywords: 'Endolift Somerset, Endolift Yeovil, non-surgical facelift Somerset, jawline tightening, jowl treatment, neck lift without surgery, laser face lift, Amethyst Aesthetics Beauty, Marianne aesthetics, South Petherton aesthetics, Endolift UK, laser skin tightening Somerset',
   authors: [{ name: 'Amethyst Aesthetics Beauty' }],
   creator: 'Amethyst Aesthetics Beauty',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Endolift Somerset From £450 - Non-Surgical Laser Lift | Amethyst Aesthetics Beauty',
-    description: 'Tighter jawline without surgery. Endolift uses a hair-thin laser fibre to tighten and contour. From £450 for eyes, up to £850 for full face, jowls & neck. 1-2 days downtime, results last 1-5 years. Award-finalist Somerset clinic.',
+    description: 'Tighter jawline without surgery. Endolift uses a hair-thin laser fibre to tighten and contour. From £450 for eyes, up to £850 for full face, jowls & neck. minimal downtime, results last up to 5 years. Award-finalist Somerset clinic.',
     url: 'https://endoliftsomerset.co.uk',
     siteName: 'Amethyst Aesthetics Beauty - Endolift Somerset',
     type: 'website',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Endolift Somerset From £450 - Non-Surgical Laser Lift | Amethyst Aesthetics Beauty',
-    description: 'Tighter jawline without surgery. Endolift laser tightening from £450. Eyes, jawline, full face & neck packages available. 1-2 days downtime. Results last 1-5 years.',
+    description: 'Tighter jawline without surgery. Endolift laser tightening from £450. Eyes, jawline, full face & neck packages available. minimal downtime. Results last up to 5 years.',
   },
   robots: {
     index: true,
