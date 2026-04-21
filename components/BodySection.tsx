@@ -93,7 +93,6 @@ export default function BodySection({ onBookingClick }: BodySectionProps) {
                     Thighs (inner or outer)
                   </li>
                 </ul>
-                <p className="text-xs text-primary-600 font-medium mt-3">+£100 to include eyes</p>
               </div>
             </div>
 
