@@ -24,17 +24,17 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
           <div className="space-y-5 sm:space-y-6 lg:space-y-8 animate-slide-up text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full mx-auto lg:mx-0 shadow-lg">
-              <span className="text-white font-semibold text-sm sm:text-base">Non-Surgical Laser Lift</span>
+              <span className="text-white font-semibold text-sm sm:text-base">Non-Surgical Skin Tightening</span>
             </div>
 
             {/* Main Heading */}
             <h1 className="font-display text-3xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.15]">
-              A Tighter Jawline
-              <span className="block gradient-text mt-1 sm:mt-2">Without Surgery</span>
+              Lift. Tighten.
+              <span className="block gradient-text mt-1 sm:mt-2">Transform.</span>
             </h1>
 
             <p className="text-sm sm:text-lg md:text-xl text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0 px-2 sm:px-0">
-              Endolift uses a hair-thin laser fibre to tighten and contour from within. Perfect for jawline, jowls, and neck — when skincare isn't enough but you're not ready for surgery.
+              Advanced Endolift skin tightening for face, chin &amp; neck. Minimal downtime, long-lasting results at Amethyst Aesthetics Beauty, South Petherton.
             </p>
 
             {/* Key Benefits Box */}
