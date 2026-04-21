@@ -102,7 +102,7 @@ export default function Treatment() {
                 <span className="text-sm">90-120 minutes</span>
               </li>
             </ul>
-            <div className="text-2xl font-bold text-primary mb-4">From £1,200</div>
+            <div className="text-2xl font-bold text-primary mb-4">From £450</div>
             <a href="#contact" className="block text-center bg-primary text-white px-6 py-2 rounded hover:bg-primary-dark transition">
               Book Now
             </a>

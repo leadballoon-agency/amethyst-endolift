@@ -77,37 +77,49 @@ export default function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
+            "name": "Eyes Endolift",
+            "description": "Targeted Endolift treatment for the eye area using 1470nm laser technology"
+          },
+          "price": "450",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Neck & Jawline Endolift",
+            "description": "Targeted Endolift treatment for neck and jawline tightening and contouring"
+          },
+          "price": "550",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-12-31"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
             "name": "Full Face Endolift",
-            "description": "Complete facial Endolift treatment for jawline, jowls, and overall facial contouring using 1470nm laser technology"
+            "description": "Complete facial Endolift treatment for overall facial contouring using 1470nm laser technology"
           },
-          "price": "1200",
+          "price": "650",
           "priceCurrency": "GBP",
           "availability": "https://schema.org/InStock",
-          "priceValidUntil": "2025-12-31"
+          "priceValidUntil": "2026-12-31"
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Neck & Chin Endolift",
-            "description": "Targeted Endolift treatment for neck and chin area tightening and contouring"
+            "name": "Full Face, Jowls & Neck Endolift",
+            "description": "Comprehensive Endolift treatment combining full face, jowls, and neck areas"
           },
-          "price": "800",
+          "price": "850",
           "priceCurrency": "GBP",
           "availability": "https://schema.org/InStock",
-          "priceValidUntil": "2025-12-31"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Combination Endolift Package",
-            "description": "Comprehensive Endolift treatment combining face, neck, and additional treatment areas"
-          },
-          "price": "1800",
-          "priceCurrency": "GBP",
-          "availability": "https://schema.org/InStock",
-          "priceValidUntil": "2025-12-31"
+          "priceValidUntil": "2026-12-31"
         }
       ]
     },
@@ -189,10 +201,10 @@ export default function StructuredData() {
     },
     "offers": {
       "@type": "AggregateOffer",
-      "lowPrice": "800",
-      "highPrice": "1800",
+      "lowPrice": "450",
+      "highPrice": "850",
       "priceCurrency": "GBP",
-      "offerCount": "3"
+      "offerCount": "4"
     }
   }
 
@@ -231,7 +243,7 @@ export default function StructuredData() {
         "name": "How much does Endolift cost in Somerset?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "At Amethyst Aesthetics Beauty, Endolift treatments start from £800 for neck and chin, £1,200 for full face, and £1,800 for combination packages. This is competitive pricing for the Somerset area, with finance options available through Clearpay."
+          "text": "Endolift treatments start from £450 for eyes, £550 for neck & jawline, £650 for full face, and £850 for the full face, jowls & neck package. Eyes can be added to any treatment for +£100. Finance options available through Clearpay."
         }
       },
       {
@@ -294,7 +306,7 @@ export default function StructuredData() {
     "estimatedCost": {
       "@type": "MonetaryAmount",
       "currency": "GBP",
-      "value": "1200"
+      "value": "650"
     },
     "step": [
       {
@@ -411,7 +423,7 @@ export default function StructuredData() {
     "name": "Endolift Somerset - Amethyst Aesthetics Beauty",
     "alternateName": "Endolift Somerset",
     "url": "https://endoliftsomerset.co.uk",
-    "description": "Expert Endolift laser treatment for non-surgical face, jawline and neck tightening in Somerset. £1,200 full face treatment by award-finalist practitioner Marianne.",
+    "description": "Expert Endolift laser treatment for non-surgical face, jawline and neck tightening in Somerset. From £450 by award-finalist practitioner Marianne.",
     "publisher": {
       "@id": "https://endoliftsomerset.co.uk/#organization"
     },

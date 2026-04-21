@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Endolift Somerset - Non-Surgical Laser Lift £1,200 | Amethyst Aesthetics Beauty'
+export const alt = 'Endolift Somerset - Non-Surgical Laser Lift From £450 | Amethyst Aesthetics Beauty'
 
 export const size = {
   width: 1200,
@@ -105,8 +105,8 @@ export default async function Image() {
               padding: '16px 32px',
             }}
           >
-            <span style={{ color: 'white', fontSize: 48, fontWeight: 800 }}>£1,200</span>
-            <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: 18 }}>Full Face Treatment</span>
+            <span style={{ color: 'white', fontSize: 48, fontWeight: 800 }}>From £450</span>
+            <span style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: 18 }}>Eyes, Face & Neck</span>
           </div>
 
           <div

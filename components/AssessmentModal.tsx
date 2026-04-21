@@ -341,7 +341,7 @@ export default function AssessmentModal({ isOpen, onClose, initialData }: Assess
     if (downtime === 'none' && budget === '2000+') {
       return {
         treatment: 'HIFU Skin Tightening',
-        price: '£800 - £1,200',
+        price: '£450 - £850',
         description: 'No downtime, high-end treatment perfect for your skin type. Non-invasive ultrasound technology for lifting and tightening.',
         isSuitable: false,
         fitzType: result

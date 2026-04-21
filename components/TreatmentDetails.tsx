@@ -23,7 +23,7 @@ export default function TreatmentDetails() {
       title: 'Full Face Rejuvenation',
       description: 'Comprehensive treatment for complete facial transformation',
       features: ['Total resurfacing', 'Dramatic results', 'Long-lasting effects', 'Premium care'],
-      price: 'From £1,200',
+      price: 'From £450',
       duration: '90-120 min',
       gradient: 'from-blue-400 to-cyan-600'
     }

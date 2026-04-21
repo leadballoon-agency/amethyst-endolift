@@ -49,10 +49,17 @@ export default function PremiumHero({ onBookingClick, onVideoClick }: PremiumHer
                   <p className="text-xs sm:text-sm text-neutral-600 font-medium">Results Last</p>
                 </div>
               </div>
-              <div className="mt-4 text-center">
-                <p className="text-2xl sm:text-3xl font-bold text-primary-600">£1,200</p>
-                <p className="text-xs sm:text-sm text-neutral-600 mt-1">Single treatment • Most need just one session</p>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-4">
+                <div className="text-center bg-white rounded-xl p-3 sm:p-4 shadow-sm">
+                  <p className="text-lg sm:text-2xl font-bold text-primary-600 mb-1">£450</p>
+                  <p className="text-xs sm:text-sm text-neutral-600 font-medium">Eyes</p>
+                </div>
+                <div className="text-center bg-white rounded-xl p-3 sm:p-4 shadow-sm">
+                  <p className="text-lg sm:text-2xl font-bold text-primary-600 mb-1">£650</p>
+                  <p className="text-xs sm:text-sm text-neutral-600 font-medium">Full Face</p>
+                </div>
               </div>
+              <p className="text-xs sm:text-sm text-neutral-600 mt-2 text-center">Single treatment • Most need just one session</p>
             </div>
 
             {/* CTA Buttons */}

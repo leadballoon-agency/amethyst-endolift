@@ -101,8 +101,8 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
         (downtime !== 'none')) {
       return {
         treatment: 'Endolift',
-        price: '£1,200',
-        description: 'Perfect match. Endolift uses a hair-thin laser fibre under the skin to tighten and contour. Ideal for your jawline and neck concerns with natural-looking results.',
+        price: 'From £450',
+        description: 'Perfect match. Endolift uses a hair-thin laser fibre under the skin to tighten and contour. Ideal for your concerns with natural-looking results. Eyes from £450, neck & jawline £550, full face £650, or the full package at £850.',
         whyThisWorks: 'Targets the exact layer where laxity occurs. More effective than surface treatments, less invasive than surgery.',
         downtime: '1-2 days mild swelling',
         results: 'Immediate tightening + continued improvement over 3-6 months',
@@ -187,8 +187,8 @@ export default function AssessmentTool({ onBookingClick, onAssessmentComplete }:
     // DEFAULT - Endolift as we're on the Endolift page
     return {
       treatment: 'Endolift',
-      price: '£1,200',
-      description: 'Based on your answers, Endolift could be a good option. Book a consultation so we can assess your specific concerns in person.',
+      price: 'From £450',
+      description: 'Based on your answers, Endolift could be a good option. Treatments start from £450 for eyes, up to £850 for the full face, jowls & neck package. Book a consultation so we can assess your specific concerns in person.',
       whyThisWorks: 'Minimally invasive laser tightening that targets skin laxity from within.',
       downtime: '1-2 days mild swelling',
       results: 'Immediate tightening + continued improvement over 3-6 months',

@@ -5,33 +5,46 @@ interface PremiumTreatmentsProps {
 export default function PremiumTreatments({ onBookingClick }: PremiumTreatmentsProps) {
   const treatments = [
     {
-      icon: '🎯',
-      title: 'Endolift Full Face',
-      description: 'Complete jawline, jowls & lower face treatment',
-      features: ['Jawline definition', 'Jowl reduction', 'Lower face tightening', '1-2 days downtime'],
-      price: '£1,200',
-      gradient: 'from-primary-400 to-primary-600',
-      popular: true,
-      badge: 'MOST POPULAR'
-    },
-    {
-      icon: '⬇️',
-      title: 'Endolift Neck & Chin',
-      description: 'Targeted treatment for under-chin and neck',
-      features: ['Under-chin tightening', 'Neck contour', 'Double chin reduction', 'Minimal downtime'],
-      price: '£800',
-      gradient: 'from-teal-400 to-teal-600',
-      popular: false
+      icon: '👁️',
+      title: 'Eyes',
+      description: 'Rejuvenate the eye area',
+      features: ['Crow\'s feet reduction', 'Under-eye tightening', 'Brow lift effect', 'Minimal downtime (1-2 days)'],
+      price: '£450',
+      gradient: 'from-cyan-400 to-blue-500',
+      popular: false,
+      addon: null
     },
     {
       icon: '✨',
-      title: 'Endolift Combination',
-      description: 'Full face plus neck for complete rejuvenation',
-      features: ['Full face treatment', 'Neck included', 'Maximum results', 'Best value'],
-      price: '£1,800',
+      title: 'Neck & Jawline',
+      description: 'Define your jawline and tighten neck skin',
+      features: ['Jowl reduction & definition', 'Neck skin tightening', 'Minimal downtime (1-2 days)', 'Long-lasting results'],
+      price: '£550',
+      gradient: 'from-blue-400 to-cyan-600',
+      popular: false,
+      addon: '+£100 to include eyes'
+    },
+    {
+      icon: '💎',
+      title: 'Full Face',
+      description: 'Complete facial skin tightening',
+      features: ['Full face lifting & tightening', 'Collagen stimulation', 'Natural-looking results', 'FDA approved technology'],
+      price: '£650',
+      gradient: 'from-primary-400 to-primary-600',
+      popular: true,
+      badge: 'MOST POPULAR',
+      addon: '+£100 to include eyes'
+    },
+    {
+      icon: '🎯',
+      title: 'Full Face, Jowls & Neck',
+      description: 'The ultimate Endolift package',
+      features: ['Complete face, jowls & neck treatment', 'Maximum lifting & tightening', 'Most comprehensive results', 'One session, full transformation'],
+      price: '£850',
       gradient: 'from-purple-400 to-purple-600',
       popular: false,
-      badge: 'BEST VALUE'
+      badge: 'BEST VALUE',
+      addon: '+£100 to include eyes'
     }
   ]
 
@@ -93,6 +106,9 @@ export default function PremiumTreatments({ onBookingClick }: PremiumTreatmentsP
                 <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-neutral-100 mt-auto">
                   <div>
                     <p className="text-xl sm:text-2xl font-bold gradient-text">{treatment.price}</p>
+                    {treatment.addon && (
+                      <p className="text-xs text-neutral-500 mt-0.5">{treatment.addon}</p>
+                    )}
                   </div>
                   <button
                     onClick={onBookingClick}
