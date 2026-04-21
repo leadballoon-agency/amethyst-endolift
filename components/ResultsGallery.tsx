@@ -393,7 +393,7 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
             { number: '4+', label: 'Years Experience' },
             { number: '800+', label: 'Treatments Completed' },
             { number: 'From £450', label: 'Eyes, Face & Neck' },
-            { number: '1-5', label: 'Years Results Last' }
+            { number: 'Up to 5', label: 'Years Results Last' }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <p className="text-2xl sm:text-3xl font-bold gradient-text mb-1 sm:mb-2">{stat.number}</p>
