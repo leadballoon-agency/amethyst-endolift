@@ -231,11 +231,11 @@ export default function ResultsGallery({ onBookingClick }: ResultsGalleryProps) 
                   </div>
                 </div>
               ) : (
-                <div className={`relative overflow-hidden ${result.featured ? '' : 'aspect-square'} ${result.isAward ? 'bg-gradient-to-br from-amber-50 to-white flex items-center justify-center' : ''}`}>
+                <div className={`relative overflow-hidden ${result.isAward ? 'aspect-square bg-gradient-to-br from-amber-50 to-white flex items-center justify-center' : result.featured ? '' : ''}`}>
                   <img
                     src={result.image}
                     alt={result.title}
-                    className={`${result.isAward ? 'w-1/2 h-auto object-contain' : result.featured ? 'w-full h-auto' : 'w-full h-full object-cover'} sm:group-hover:scale-105 transition-transform duration-500`}
+                    className={`${result.isAward ? 'w-1/2 h-auto object-contain' : 'w-full h-auto'} sm:group-hover:scale-105 transition-transform duration-500`}
                   />
 
                   {/* Gradient Overlay */}
