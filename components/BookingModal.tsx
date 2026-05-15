@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { trackBookingModalOpen, trackPhoneClick } from './FacebookPixel'
 
 interface BookingModalProps {
@@ -10,6 +10,8 @@ interface BookingModalProps {
 }
 
 export default function BookingModal({ isOpen, onClose, assessmentData }: BookingModalProps) {
+  const [consultType, setConsultType] = useState<'clinic' | 'video'>('video')
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
@@ -19,7 +21,7 @@ export default function BookingModal({ isOpen, onClose, assessmentData }: Bookin
       const script = document.createElement('script')
       script.type = 'text/javascript'
       script.async = true
-      script.src = 'https://link.amethystpay.co.uk/js/form_embed.js'
+      script.src = 'https://api.leadconnectorhq.com/js/form_embed.js'
       document.body.appendChild(script)
 
       return () => {
@@ -64,10 +66,39 @@ export default function BookingModal({ isOpen, onClose, assessmentData }: Bookin
             <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-white/20 backdrop-blur rounded-full mb-2 sm:mb-3 lg:mb-4">
               <span className="text-2xl sm:text-3xl">✨</span>
             </div>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">Book Your Treatment</h2>
-            <p className="text-white/90 text-xs sm:text-sm lg:text-base">
-              Select your preferred date and time
-            </p>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3">Book Your Treatment</h2>
+            <div className="inline-flex items-center bg-white/15 backdrop-blur rounded-full p-1">
+              <button
+                onClick={() => setConsultType('clinic')}
+                className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  consultType === 'clinic'
+                    ? 'bg-white text-primary-600 shadow-sm'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                <span className="flex items-center gap-1.5">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                  In-Clinic
+                </span>
+              </button>
+              <button
+                onClick={() => setConsultType('video')}
+                className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
+                  consultType === 'video'
+                    ? 'bg-white text-primary-600 shadow-sm'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                <span className="flex items-center gap-1.5">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  Online
+                </span>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -79,12 +110,16 @@ export default function BookingModal({ isOpen, onClose, assessmentData }: Bookin
             <div className="space-y-4 sm:space-y-6 animate-fade-in">
               <div>
                 <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-4">Book Your Appointment</h3>
-                <p className="text-sm sm:text-base text-neutral-600 mb-4 sm:mb-6">Select your preferred date and time with Marianne</p>
+                <p className="text-sm sm:text-base text-neutral-600 mb-4 sm:mb-6">
+                  {consultType === 'video'
+                    ? 'Online video consultation — from the comfort of home'
+                    : 'In-clinic consultation — select your preferred date and time'}
+                </p>
               </div>
 
               <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 min-h-[600px]">
                 <iframe
-                  src="https://link.amethystpay.co.uk/widget/booking/PFHn39HpkaAST2RhCmAB"
+                  src="https://api.leadconnectorhq.com/widget/booking/PFHn39HpkaAST2RhCmAB"
                   style={{
                     width: '100%',
                     minHeight: '700px',
